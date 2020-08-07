@@ -17,6 +17,15 @@ namespace SimpleApi.Controllers {
             }
         }
 
+        [HttpGet("{id}", Name = "GetItem")]
+        public async Task<ActionResult<Item>> GetById(long id) {
+            var item = await _context.Items.FindAsync(id);
+
+            if (item == null) return NotFound();
+
+            return item;
+        }
+
         [HttpPost]
         public IActionResult Create([FromBody] Item item) {
             if (item == null) return BadRequest();
