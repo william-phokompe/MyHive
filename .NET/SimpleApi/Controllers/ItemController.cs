@@ -42,5 +42,17 @@ namespace SimpleApi.Controllers {
 
             return new OkResult();
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(long id) {
+            var itemToDelete = _context.Items.FirstOrDefault();
+
+            if (itemToDelete == null) return NotFound();
+
+            _context.Items.Remove(itemToDelete);
+            _context.SaveChanges();
+
+            return new OkResult();
+        }
     }
 }
