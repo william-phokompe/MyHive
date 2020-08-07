@@ -26,5 +26,21 @@ namespace SimpleApi.Controllers {
 
             return CreatedAtRoute("GetItem", new { id = item.Id }, item);
         }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(long id, [FromBody] Item item) {
+            if (item == null || item.Id != id) return BadRequest();
+
+            var updatedItem = _context.Items.FirstOrDefault(t => t.Id == id);
+            if (updatedItem == null) return NotFound();
+
+            updatedItem.IsComplete = item.IsComplete;
+            updatedItem.Name = item.Name;
+
+            _context.Items.Update(updatedItem);
+            _context.SaveChanges();
+
+            return new OkResult();
+        }
     }
 }
