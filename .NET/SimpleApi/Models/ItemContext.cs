@@ -7,6 +7,6 @@ namespace SimpleApi.Models {
         {
         }
 
-        public DbSet<ItemContext> Items { get; set; }
+        public DbSet<Item> Items { get; set; }
     }
 }
