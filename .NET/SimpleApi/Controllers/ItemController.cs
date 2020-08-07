@@ -16,5 +16,15 @@ namespace SimpleApi.Controllers {
                 _context.Items.Add(new Item { Name = "Default" });
             }
         }
+
+        [HttpPost]
+        public IActionResult Create([FromBody] Item item) {
+            if (item == null) return BadRequest();
+
+            _context.Items.Add(item);
+            _context.SaveChanges();
+
+            return CreatedAtRoute("GetItem", new { id = item.Id }, item);
+        }
     }
 }
