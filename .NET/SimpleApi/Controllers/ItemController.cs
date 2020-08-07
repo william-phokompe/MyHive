@@ -14,6 +14,7 @@ namespace SimpleApi.Controllers {
 
             if (_context.Items.Count() == 0) {
                 _context.Items.Add(new Item { Name = "Default" });
+                _context.SaveChanges();
             }
         }
 
