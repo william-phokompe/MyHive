@@ -28,6 +28,8 @@ namespace CodingForGoodPerformance
     {
         static void Main(string[] args)
         {
+            /// Build benchmark with optimization enabled.
+            /// https://benchmarkdotnet.org/articles/guides/troubleshooting.html#debugging-benchmarks
             var summary = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, new DebugInProcessConfig());
             // var summary = BenchmarkRunner.Run(typeof(Program).Assembly);
             // Console.WriteLine(summary);
