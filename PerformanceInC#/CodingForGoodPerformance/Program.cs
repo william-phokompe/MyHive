@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Security.Cryptography;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
@@ -25,7 +26,7 @@ namespace CodingForGoodPerformance
         public byte[] Md5() => mD5.ComputeHash(data);
     }
     
-    public class SecondBenchmarkTest {
+    public class SecondBenchmark {
         private byte[] data;
 
         [GlobalSetup]
@@ -59,15 +60,44 @@ namespace CodingForGoodPerformance
         }
     }
     
+    public class ThirdBenchmark {
+        private byte[] data;
+
+        [Params(20, 200, 1000, 20000)]
+        public decimal N;
+
+        [Params(95)]
+        public decimal fill;
+
+        [GlobalSetup]
+        public void Setup() {
+            decimal lengthActual = N * (fill / 100);
+
+            byte[] unicode = Encoding.Unicode.GetBytes(new string('F', (int)lengthActual/2));
+            byte[] received = new byte[(int)N];
+            Buffer.BlockCopy(unicode, 0, received, 0, unicode.Length);
+
+            data = received;
+        }
+
+        [Benchmark]
+        public string Benchmark_Current() {
+            string ret = Encoding.Unicode.GetString(data);
+            if (ret.IndexOf('\0') > -1)
+                ret = ret.Substring(0, ret.IndexOf('\0'));
+            return ret;
+        }
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
             /// Build benchmark with optimization enabled.
             /// https://benchmarkdotnet.org/articles/guides/troubleshooting.html#debugging-benchmarks
-            // var summary = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, new DebugInProcessConfig());
+            var summary = BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args, new DebugInProcessConfig());
             
-            var summary = BenchmarkRunner.Run<SecondBenchmarkTest>();
+            // var summary = BenchmarkRunner.Run<SecondBenchmark>();
         }
     }
 }
