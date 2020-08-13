@@ -4,6 +4,7 @@ using System.Security.Cryptography;
 using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Running;
+using System.Runtime.InteropServices;
 
 namespace CodingForGoodPerformance
 {
@@ -86,6 +87,17 @@ namespace CodingForGoodPerformance
             if (ret.IndexOf('\0') > -1)
                 ret = ret.Substring(0, ret.IndexOf('\0'));
             return ret;
+        }
+
+        [Benchmark]
+        public string Benchmark_PtrToString() {
+            var handle = GCHandle.Alloc(data, GCHandleType.Pinned);
+
+            try {
+                return Marshal.PtrToStringUni(handle.AddrOfPinnedObject());
+            } finally {
+                handle.Free();
+            }
         }
     }
 
