@@ -99,6 +99,19 @@ namespace CodingForGoodPerformance
                 handle.Free();
             }
         }
+
+        [Benchmark]
+        public string Benchmark_ManualSearch() {
+            int index = -1;
+            for (int i = 0; i < data.Length - 1; i += 2) {
+                if (data[i] == '\0' && data[i + 1] == '\0') {
+                    index = i;
+                    break ;
+                }
+            }
+
+            return Encoding.Unicode.GetString(data, 0, index);
+        }
     }
 
     class Program
