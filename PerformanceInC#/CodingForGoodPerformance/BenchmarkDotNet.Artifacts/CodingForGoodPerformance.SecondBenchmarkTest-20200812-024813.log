@@ -1,0 +1,7 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 1 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet restore  /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 in E:\Sandbox\Projects\MyHive\PerformanceInC#\CodingForGoodPerformance\bin\release\netcoreapp3.1\3a204346-91e4-407c-9405-3cd2e732c92d
+// command took 2,03s and exited with 0
+// start dotnet build -c Release  --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 in E:\Sandbox\Projects\MyHive\PerformanceInC#\CodingForGoodPerformance\bin\release\netcoreapp3.1\3a204346-91e4-407c-9405-3cd2e732c92d
