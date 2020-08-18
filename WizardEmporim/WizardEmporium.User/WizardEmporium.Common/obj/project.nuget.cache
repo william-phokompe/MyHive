@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "dXZCEgli6ZUGAxdTKyYkIUh6RiUvwW3JYQBkTa1Cx42kksp0yj5cRaAybZ/KAam+Ab/XoPOYZ6Px/TE+kzYFGA==",
+  "success": true,
+  "projectFilePath": "E:\\Sandbox\\Projects\\MyHive\\WizardEmporim\\WizardEmporium.User\\WizardEmporium.Common\\WizardEmporium.Common.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\system.data.sqlite.core\\1.0.113.1\\system.data.sqlite.core.1.0.113.1.nupkg.sha512"
+  ],
+  "logs": []
+}
