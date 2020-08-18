@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -55,10 +50,14 @@ namespace WizardEmporium.User
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapRazorPages();
+            // Swagger generation
+            app.UseSwagger();
+            app.UseSwaggerUI(options => {                
+                options.SwaggerEndpoint("swagger/v1/swagger,json", "Wizard Emporium User API");
+                options.RoutePrefix = string.Empty;
             });
+
+            app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
     }
 }
