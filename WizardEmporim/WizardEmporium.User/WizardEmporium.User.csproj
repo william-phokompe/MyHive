@@ -11,4 +11,8 @@
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0-preview.7.20364.11" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="WizardEmporium.Common\WizardEmporium.Common.csproj" />
+  </ItemGroup>
+
 </Project>
