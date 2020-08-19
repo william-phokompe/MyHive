@@ -14,4 +14,10 @@ public class AccountRepo : BaseRepo {
             FROM Account
             WHERE Username = @username
             AND PasswordHash = @passwordHash", new { username, passwordHash }));
+    
+    public async Task<AccountDto> FindAccountAsync(string accountId) => 
+        await GetConnectionAsync(connection => connection.QueryFirstOrDefault<AccountDto>(@"
+            SELECT AccountId, RoleId, Username, Suspended
+            FROM Account
+            WHERE AccountId = @accountId", new { accountId }));
 }
