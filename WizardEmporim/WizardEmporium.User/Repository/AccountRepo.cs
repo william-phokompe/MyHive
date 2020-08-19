@@ -20,4 +20,15 @@ public class AccountRepo : BaseRepo {
             SELECT AccountId, RoleId, Username, Suspended
             FROM Account
             WHERE AccountId = @accountId", new { accountId }));
+    
+    public async Task<int> UpdateAccountAsync(int accountId, bool suspended) => 
+        await GetConnectionAsync(connection => connection.ExecuteScalarAsync<int>(@"
+        UPDATE Account
+        SET Suspended = @suspended
+        WHERE AccountId = @accountId", new { accountId, suspended }));
+    
+    public async Task DeleteAccountAsync(int accountId) => 
+        await GetConnectionAsync(connection => connection.ExecuteAsync(@"
+            DELETE FROM Account
+            WHERE AccountId = @accountId", new { accountId }));
 }
