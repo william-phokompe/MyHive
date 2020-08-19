@@ -1,12 +1,22 @@
 {
   "version": 2,
-  "dgSpecHash": "dXZCEgli6ZUGAxdTKyYkIUh6RiUvwW3JYQBkTa1Cx42kksp0yj5cRaAybZ/KAam+Ab/XoPOYZ6Px/TE+kzYFGA==",
+  "dgSpecHash": "wOzHVIj5JZhP9tKm7FmKJV8Ywm0bXbQZ3f/6QWFjhozOgI7RcM8OsiZW4nC4bl5MtgOFQwh13j2sswZaYN6RhA==",
   "success": true,
   "projectFilePath": "E:\\Sandbox\\Projects\\MyHive\\WizardEmporim\\WizardEmporium.User\\WizardEmporium.Common\\WizardEmporium.Common.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\William\\.nuget\\packages\\microsoft.data.sqlite\\3.1.7\\microsoft.data.sqlite.3.1.7.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\microsoft.data.sqlite.core\\3.1.7\\microsoft.data.sqlite.core.3.1.7.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\William\\.nuget\\packages\\system.data.sqlite.core\\1.0.113.1\\system.data.sqlite.core.1.0.113.1.nupkg.sha512"
+    "C:\\Users\\William\\.nuget\\packages\\sqlitepclraw.bundle_e_sqlite3\\2.0.2\\sqlitepclraw.bundle_e_sqlite3.2.0.2.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\sqlitepclraw.core\\2.0.2\\sqlitepclraw.core.2.0.2.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.0.2\\sqlitepclraw.lib.e_sqlite3.2.0.2.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.0.2\\sqlitepclraw.provider.e_sqlite3.2.0.2.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\system.buffers\\4.4.0\\system.buffers.4.4.0.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\system.data.sqlite.core\\1.0.113.1\\system.data.sqlite.core.1.0.113.1.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\system.numerics.vectors\\4.4.0\\system.numerics.vectors.4.4.0.nupkg.sha512",
+    "C:\\Users\\William\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
   ],
   "logs": []
 }
