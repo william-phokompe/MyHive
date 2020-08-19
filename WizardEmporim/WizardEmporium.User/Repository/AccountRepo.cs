@@ -7,4 +7,11 @@ public class AccountRepo : BaseRepo {
         await GetConnectionAsync(connection => connection.ExecuteAsync(@"
             INSERT INTO Account(Username, PasswordHash, RoleId)
             VALUES(@username, @passwordHash, @roleId)", new { username, passwordHash, roleId }));
+
+    public async Task<AccountDto> FindAccountAsync(string username, string passwordHash) => 
+        await GetConnectionAsync(connection => connection.QueryFirstOrDefault<AccountDto>(@"
+            SELECT AccountId, RoleId, Username, Suspended
+            FROM Account
+            WHERE Username = @username
+            AND PasswordHash = @passwordHash", new { username, passwordHash }));
 }
