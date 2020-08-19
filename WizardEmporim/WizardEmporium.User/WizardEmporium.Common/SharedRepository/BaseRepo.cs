@@ -19,7 +19,7 @@ public abstract class BaseRepo {
         return connection;
     }
 
-    protected async Task<T> getConnectionAsync<T>(Func<SqliteConnection, Task<T>> action) {
+    protected async Task<T> GetConnectionAsync<T>(Func<SqliteConnection, Task<T>> action) {
         using var conn = await getConnectionAsync();
         return await action(conn);
     }

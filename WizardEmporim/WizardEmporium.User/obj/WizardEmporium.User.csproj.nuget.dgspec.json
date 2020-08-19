@@ -4,6 +4,70 @@
     "E:\\Sandbox\\Projects\\MyHive\\WizardEmporim\\WizardEmporium.User\\WizardEmporium.User.csproj": {}
   },
   "projects": {
+    "E:\\Sandbox\\Projects\\MyHive\\WizardEmporim\\WizardEmporium.User\\WizardEmporium.Common\\WizardEmporium.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Sandbox\\Projects\\MyHive\\WizardEmporim\\WizardEmporium.User\\WizardEmporium.Common\\WizardEmporium.Common.csproj",
+        "projectName": "WizardEmporium.Common",
+        "projectPath": "E:\\Sandbox\\Projects\\MyHive\\WizardEmporim\\WizardEmporium.User\\WizardEmporium.Common\\WizardEmporium.Common.csproj",
+        "packagesPath": "C:\\Users\\William\\.nuget\\packages\\",
+        "outputPath": "E:\\Sandbox\\Projects\\MyHive\\WizardEmporim\\WizardEmporium.User\\WizardEmporium.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\William\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.Data.SQLite.Core": {
+              "target": "Package",
+              "version": "[1.0.113.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "E:\\Sandbox\\Projects\\MyHive\\WizardEmporim\\WizardEmporium.User\\WizardEmporium.User.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -27,7 +91,11 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "E:\\Sandbox\\Projects\\MyHive\\WizardEmporim\\WizardEmporium.User\\WizardEmporium.Common\\WizardEmporium.Common.csproj": {
+                "projectPath": "E:\\Sandbox\\Projects\\MyHive\\WizardEmporim\\WizardEmporium.User\\WizardEmporium.Common\\WizardEmporium.Common.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -46,6 +114,10 @@
             "Microsoft.Data.SQLite.Core": {
               "target": "Package",
               "version": "[5.0.0-preview.7.20365.15, )"
+            },
+            "Microsoft.Data.Sqlite": {
+              "target": "Package",
+              "version": "[*, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
